@@ -17,10 +17,12 @@ async function checkWeather(city) {
 
         const icon = document.querySelector(".weather_icon");
 
-        // console.log(data);
+        console.log(data);
+
+        const countryCode = data.sys.country;
 
         // Updates data
-        document.querySelector(".city").innerHTML = data.name;
+        document.querySelector(".city").innerHTML = `${data.name}, ${countryCode}`;
         document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
         document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
         document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
